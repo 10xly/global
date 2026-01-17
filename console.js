@@ -1,0 +1,1 @@
+module.exports = require("global/console") // dont care
