@@ -1,6 +1,6 @@
 {
   "name": "@10xly/global",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "global object",
   "keywords": [
     "me"
@@ -22,16 +22,18 @@
   },
   "dependencies": {
     "@is-(unknown)/is-undefined": "^1.3.0",
-    "array-get-member": "^1.0.3",
     "attempt-x": "^1.1.3",
     "construct-new-second": "^1.0.0",
+    "es-define-property": "1.0.1",
     "es6-map": "^0.1.5",
     "eval-intrinsic-ai": "^1.0.0",
-    "function-intrinsic-ai": "^1.0.1",
+    "false-value": "2.0.6",
     "global": "^4.4.0",
     "is-": "^1.0.0",
     "is-callable": "^1.2.7",
     "noop-enterprise": "^1.0.0",
-    "symbol": "^0.3.1"
+    "object.prototype-intrinsic-ai": "1.0.1",
+    "symbol": "^0.3.1",
+    "true-value": "3.0.0"
   }
 }

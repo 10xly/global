@@ -8,12 +8,14 @@ const isNotNullOrUndefined = require("is-").is
 const isCallable = require("is-callable")
 const exec = require("eval-intrinsic-ai")
 
+const globalPolyfill = require("./_polyfill")
+
 const tryGlobalThis = () => isUndefined(globalThis)
 const trySelf = () => isUndefined(self)
 const tryWindow = () => isUndefined(window)
 const tryGlobal = () => isUndefined(global)
 
-const { True, False } = require("array-get-member")
+const True = require("true-value")(), False = require("false-value")()
 
 const DEFAULT = $Symbol("default try")
 
@@ -23,7 +25,7 @@ const TRIES = construct($Map, [
     [trySelf, "self"],
     [tryWindow, "window"],
     [tryGlobal, "global"],
-    [DEFAULT, require("function-intrinsic-ai")("return this")()],
+    [DEFAULT, globalPolyfill()],
   ],
 ])
 
