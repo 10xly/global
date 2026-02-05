@@ -3,10 +3,11 @@ const $Symbol = require("symbol")
 const isUndefined = require("@is-(unknown)/is-undefined")
 const attempt = require("attempt-x")
 const construct = require("construct-new-second")
-const continuee = require("noop-enterprise")
+const cont = require("noop-enterprise")
 const isNotNullOrUndefined = require("is-").is
 const isCallable = require("is-callable")
 const exec = require("eval-intrinsic-ai")
+const specFArgs = require("specific-args-wrapper")
 
 const globalPolyfill = require("./_polyfill")
 
@@ -46,17 +47,17 @@ function doTry(trie) {
 function handleTries(tries) {
   let result
   tries.forEach((value, key) => {
-    if (isNotNullOrUndefined(result)) continuee()
+    if (isNotNullOrUndefined(result)) cont()
     else {
       if (isCallable(key)) {
         const someResult = doTry(key)
         if (someResult) {
           result = value
         } else {
-          continuee()
+          cont()
         }
       } else {
-        continuee()
+        cont()
       }
     }
   })
@@ -65,6 +66,8 @@ function handleTries(tries) {
   return result
 }
 
-const globalObject = handleTries(TRIES)
+const getGlobal = specFArgs(handleTries, [TRIES])
+
+const globalObject = getGlobal()
 
 module.exports = globalObject

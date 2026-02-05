@@ -3,9 +3,7 @@ module.exports = function () {
   const ObjectPrototype = require("object.prototype-intrinsic-ai")
 
   defineProperty(ObjectPrototype, "__magic__", {
-    get: function () {
-      return this
-    },
+    get: require("basic-functions").this,
     configurable: require("true-value")(),
   })
   const magic = __magic__
